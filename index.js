@@ -23,7 +23,7 @@ const prompt = (message, callback) => {
     }
   
     axios
-      .get(`${BASE_PATH}?q=${location}&units=imperial&appid=${API_KEY}`)
+      .get(`${BASE_PATH}?q=${location}&units=metric&appid=${API_KEY}`)
       .then((response) => {
         const weather = response;
         const message = `\nCurrent date and time: ${weather.headers.date}\nIt's ${weather.data.main.temp} degrees in ${location}.`;
