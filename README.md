@@ -44,5 +44,31 @@ This initializes the repository ready for git and creates a .git subdirectory in
 12. `git push -u origin main`
     This is pushing your code up to your repo for the first commit.
 
-For API key, will need to be signed up from this URL.
+For API key, will need to be signed up from this URL. Its free to register for the single API.
 https://home.openweathermap.org/api_keys
+
+The output of the program should look as follows if it runs correctly:
+Enter a location or a postal code: 8150
+
+Current date and time: Sun, 30 Jun 2024 11:37:03 GMT
+It's 36.88 degrees in 8150.
+
+Assumed error should look like this:
+Enter a location or a postal code: XXX82
+Error: city not found
+
+This program, also needs to be run whilst online (to communicate with the API), else it fails like this:
+
+/Users/Daniel/Documents/DanielCode/weather/index.js:35
+console.log(`Error: ${err.response.data.message}`);
+^
+
+TypeError: Cannot read properties of undefined (reading 'data')
+at /XXXCODE_LOCATION/weather/index.js:35:44
+at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v20.15.0
+
+Further development:
+-Put in a nice looking error message to inform the user
+-Convert the output to a nicer looking message/degrees celcies or degrees fahrenheit. To be more useful data to the end user (might be available through the API but have to research further)
