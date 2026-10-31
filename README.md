@@ -27,7 +27,7 @@ This initializes the repository ready for git and creates a .git subdirectory in
 7. `touch .gitignore`
    This creates a file of which you can 'ignore' or not commit the sensitive files or big files to your repo.
    I recommend ignoring any files that contain keys, or create a keys file/directory to store that information and import it into your project using variables.
-   Also ignore the package-lock.josn and node_modules, as when you clone the package to a new machine, you will run npm install anyway.
+   Also ignore node_modules, as when you clone the package to a new machine, you will run npm install anyway. Do commit package-lock.json: it pins the exact package versions, so every install gets the same ones and Dependabot can flag security fixes.
 
 8. `git add --all`
    This will add all the files, and through the .gitignore file, will read that and not upload those certain files.
