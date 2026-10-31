@@ -72,3 +72,8 @@ Node.js v20.15.0
 Further development:
 -Put in a nice looking error message to inform the user
 -Convert the output to a nicer looking message/degrees celcies or degrees fahrenheit. To be more useful data to the end user (might be available through the API but have to research further)
+
+Running it:
+1. `npm install` (node_modules isn't committed, so this pulls down axios)
+2. Create `keys/apiKeys.js` with your OpenWeatherMap key: `module.exports = "YOUR_API_KEY";`
+3. `node index.js`
