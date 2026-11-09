@@ -32,7 +32,13 @@ const prompt = (message, callback) => {
         process.exit();
       })
       .catch((err) => {
-        console.log(`Error: ${err.response.data.message}`);
+        // err.response only exists if the weather service replied. If it's
+        // missing, we never reached it (offline, or the site is down).
+        if (err.response) {
+          console.log(`Error: ${err.response.data.message}`);
+        } else {
+          console.log("Error: couldn't reach the weather service - check you're online.");
+        }
         process.exit();
       });
   });
